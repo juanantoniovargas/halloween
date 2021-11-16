@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Halloween party</title>
+    <link rel="stylesheet" href="./styles/halloween.css">
+    <script src="./javascripts/halloween.js"></script>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+<body onload="sonar('melodia')">
+    <!-- el sonido lo saco fuera del container porque no va a tener nada visible -->
+    <audio id="buuu">
+        <source src="./sounds/fantasma.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="melodia">
+        <source src="./sounds/melodia.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="ñiñiñi">
+        <source src="./sounds/murcielagos.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gnaa">
+        <source src="./sounds/cuervo.mp3" type="audio/mpeg">
+    </audio>
+    <!-- el layput basico incluye un container -->
+    <!-- ATENCION: esta pagina no va a ser responsive -->
+    <div id="container">
+        <p id="p1">Scary Halloween Party</p> <!-- titulo -->
+        <p id="invitacion">Good night! I'd like to invite you to <br>
+        my Halloween party! <br>
+        The party will start at eight pm and <br>
+        it will be in my house. <br>
+        You have to wear a Halloween costume and <br>
+        bring some candies <br>
+        or you won't be allowed to get in!</p>
+
+        <!-- PRIMER EFECTO: LA CALABAZA DE LA IZQUIERDA -->
+        <p id="p2">Don't touch the pumpkin on the left</p>
+        <img id="ghost" src="./images/fantasma.gif" alt="">
+        <!-- CREO UN DIV VACIO PARA DEFINIR EL RECTANGULO SENSIBLE -->
+        <div id="calabaza" onmouseover="mostrar('ghost'); sonar('buuu')" 
+                           onmouseout="ocultar('ghost'); parar('buuu')">
+        </div>
+        
+        <!-- SEGUNDO EFECTO: CABEZA DEL NIÑO -->
+        <p id="p3">Don't you dare annoy him</p>
+        <img id="bat" src="./images/murcielagos.gif" alt="">
+        <div id="murcielago" onmouseover="mostrar('bat'); sonar('ñiñiñi')" 
+                             onmouseout="ocultar('bat'); parar('ñiñiñi')">
+        </div>
+
+        <!-- TERCER EFECTO: MONTAÑA DE LA DERECHA -->
+        <p id="p4">You shouldn't stay on the top of the mountain</p>
+        <img id="crow" src="./images/cuervo.gif" alt="">
+        <div id="cuervo" onmouseover="mostrar('crow'); sonar('gnaa')" 
+                         onmouseout="ocultar('crow'); parar('gnaa')">
+        </div>
+    </div>
+</body>
+</html>
